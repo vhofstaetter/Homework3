@@ -1,5 +1,7 @@
 package net.htlgkr.hove.pos3.hausuebung3;
 
+import java.util.Comparator;
+
 public class Weapons {
     public String weaponname;
     public String weaponcombatType;
