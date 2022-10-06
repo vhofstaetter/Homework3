@@ -11,5 +11,8 @@ public class Predicates {
 
         boolean evenPositiv = isEven.and(isPositive).test(5);
         boolean unevenPositive = isPositive.and(isEven).negate().test(20);
+
+        System.out.println(evenPositiv);
+        System.out.println(unevenPositive);
     }
 }
