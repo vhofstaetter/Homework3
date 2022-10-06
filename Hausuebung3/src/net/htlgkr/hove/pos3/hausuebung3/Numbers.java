@@ -1,5 +1,8 @@
 package net.htlgkr.hove.pos3.hausuebung3;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Numbers {
@@ -22,8 +25,8 @@ public class Numbers {
 
     public String[] randomString() {
         for (int i = 0; i < randomStringsArray.length; i++) {
-            int leftLimit = 97; // letter 'a'
-            int rightLimit = 122; // letter 'z'
+            int leftLimit = 97;
+            int rightLimit = 122;
             int targetStringLength = 10;
             Random random = new Random();
             StringBuilder buffer = new StringBuilder(targetStringLength);
@@ -36,5 +39,13 @@ public class Numbers {
             randomStringsArray[i] = generatedString;
         }
         return randomStringsArray;
+    }
+
+    public List<String> upperCase(String[] strings) {
+        List<String> upperCaseStrings = new ArrayList<>();
+        for (int i = 0; i < strings.length; i++) {
+           upperCaseStrings.add(strings[i].toUpperCase());
+        }
+        return upperCaseStrings;
     }
 }
