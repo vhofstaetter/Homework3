@@ -43,14 +43,14 @@ public class WeaponsMain {
     }
 
     public void comaring(Weapons weapons1, Weapons weapons2) {
-        ComparatorWeapons compareDamage = (damage1, damage2) -> {
+        /*ComparatorWeapons compareDamage = (damage1, damage2) -> {
             if (damage1 - damage2 > 0) {
                 return 1;
             } else if (damage2 - damage1 > 0) {
                 return -1;
             }
             return 0;
-        };
+        };*/
 
         String compatType1 = weapons1.getWeaponcombatType();
         String compatType2 = weapons2.getWeaponcombatType();
@@ -59,7 +59,7 @@ public class WeaponsMain {
         String name1 = weapons1.getWeaponname();
         String name2 = weapons2.getWeaponname();
 
-        ComparatorWeapons copareAlphabeticly = (weapons1, weapons2) -> {
+       /* ComparatorWeapons copareAlphabeticly = (weapons1, weapons2) -> {
             if (!compatType1.equals(compatType2)) {
 
             } else {
@@ -71,7 +71,7 @@ public class WeaponsMain {
                     }
                 }
             }
-        };
+        };*/
 
     }
 }
