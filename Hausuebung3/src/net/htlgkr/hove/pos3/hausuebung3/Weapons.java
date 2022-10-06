@@ -1,6 +1,7 @@
 package net.htlgkr.hove.pos3.hausuebung3;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public class Weapons {
     public String weaponname;
@@ -57,5 +58,21 @@ public class Weapons {
         this.weaponvalue = weaponvalue;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Weapons)) return false;
+        Weapons weapons = (Weapons) o;
+        return getWeapondamage() == weapons.getWeapondamage() && getWeaponspeed() == weapons.getWeaponspeed() && getWeaponstrength() == weapons.getWeaponstrength() && getWeaponvalue() == weapons.getWeaponvalue() && Objects.equals(getWeaponname(), weapons.getWeaponname()) && Objects.equals(getWeaponcombatType(), weapons.getWeaponcombatType()) && Objects.equals(getWeapondamageType(), weapons.getWeapondamageType());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getWeaponname(), getWeaponcombatType(), getWeapondamageType(), getWeapondamage(), getWeaponspeed(), getWeaponstrength(), getWeaponvalue());
+    }
+
+    @Override
+    public String toString() {
+        return "Weapon{" + "name=" + weaponname + ", combatType=" + weaponcombatType + ", damageType=" + weapondamageType + ", damage=" + weapondamage + ", speed=" + weaponspeed + ", minStrength=" + weaponstrength + ", value=" + weaponvalue + '}';
+    }
 }

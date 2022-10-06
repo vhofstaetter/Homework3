@@ -11,14 +11,20 @@ import java.util.Scanner;
 public class WeaponsMain {
 
     public static void main(String[] args) {
-        //
+
+        Printable printable = (weaponsList) ->{
+            for (int i = 0; i < weaponsList.size(); i++) {
+                System.out.println(weaponsList.get(i));
+            }
+        };
     }
 
-    public void scanFile() {
+    public List<Weapons> scanFile() {
+        List<Weapons> weaponsList = null;
         try {
             Scanner scanner = new Scanner(new File("weapons.csv"));
             scanner.nextLine();
-            List<Weapons> weaponsList = new ArrayList<>();
+            weaponsList = new ArrayList<>();
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] parts = line.split(";");
@@ -33,6 +39,7 @@ public class WeaponsMain {
         } catch (FileNotFoundException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }
+        return weaponsList;
     }
 
     public void comaring(Weapons weapons1, Weapons weapons2) {
@@ -64,7 +71,7 @@ public class WeaponsMain {
                     }
                 }
             }
-        }
+        };
 
     }
 }
